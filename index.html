@@ -4,38 +4,27 @@
 <script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<p><strong>아래 카카오톡 아이콘을 눌러 전송하0000세요</strong> By. Blackcats4567</p>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
 <a id="kakao-link-btn" href="javascript:sendLink()">
   <img
-    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
 </a>
 <script type="text/javascript">
- Kakao.init('2df5a468d0f98ee43fd27c5bb4bca2ca');
+ Kakao.init('	2df5a468d0f98ee43fd27c5bb4bca2ca');
   function sendLink() {
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
         title: '띵동~ 선물이 왔어요~~ 🎁',
-        description: '여기를 눌러서 받아보세요.
-        
-        
-        ',
+        description: '여기를 눌러 받아보세요.',
         imageUrl:
-          'https://t1.daumcdn.net/cfile/tistory/27E7B93359716EA304',
+          'https://ifh.cc/g/1WYBmZ.png',
         link: {
           mobileWebUrl: 'http://선물.바닐라.웹.한국',
           webUrl: 'http://선물.바닐라.웹.한국',
         },
       },
-      buttons: [
-        {
-          title: '1',
-          link: {
-            mobileWebUrl: 'http://선물.바닐라.웹.한국',
-            webUrl: 'http://선물.바닐라.웹.한국',
-          },
-        },
-      ],
     })
   }
 </script>
