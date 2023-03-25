@@ -5,7 +5,7 @@
 </head>
 <body>
 <p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
-<a id="kakao-link-btn" href="javascript:sendLink(5b9104476f762a176cf1b4cc2bc5fa00)">
+<a id="kakao-link-btn" href="javascript:sendLink()">
   <img
     src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
   />
@@ -16,15 +16,29 @@
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '띵동~ 선물이 왔어요~~ 🎁',
-        description: '여기를 눌러 받아보세요.',
+        title: '닐라는 귀여움',
+        description: 'ㄹㅇㅋㅋ',
         imageUrl:
-          'https://ifh.cc/g/1WYBmZ.png',
+          'http://바닐라.웹.한국',
         link: {
-          mobileWebUrl: 'http://선물.바닐라.웹.한국',
-          webUrl: 'http://선물.바닐라.웹.한국',
+          mobileWebUrl: 'http://바닐라.웹.한국',
+          webUrl: 'http://바닐라.웹.한국',
         },
       },
+      social: {
+        likeCount: 999, //99999가 최대입니다
+        commentCount: 999, //99999가 최대입니다
+        sharedCount: 999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '맞다면 클릭',
+          link: {
+            mobileWebUrl: 'http://바닐라.웹.한국',
+            webUrl: 'http://바닐라.웹.한국',
+          },
+        },
+      ],
     })
   }
 </script>
