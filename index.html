@@ -1,43 +1,253 @@
-<html>
-<head>
-<title>카카오톡 버튼있는 메시지 전송하기</title>
-<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-</head>
-<body>
-<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
-<a id="kakao-link-btn" href="javascript:sendLink()">
-  <img
-    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-  />
-</a>
-<script type="text/javascript">
- Kakao.init('77e4e8078b71b941ef372b9ff94cb8aa');
-  function sendLink() {
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '어서오십쇼 ! ヾ(๑╹◡╹)ﾉ"\n\n규칙 한번씩 읽어주세요\n\n방 하트 ♥  눌러주세요',
-        description: '',
-        imageUrl:
-          '',
-        link: {
-          mobileWebUrl: '',
-          webUrl: '',
-        },
-      },
-      buttons: [
-        {
-          ttitle: '공지사항 보기',
-          link: {
-            mobileWebUrl: '만우절.바닐라.웹.한국',
-            webUrl: '만우절.바닐라.웹.한국',
-          },
-        },
-      ],
-    })
+body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .container {
+      font-size: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 0 20px;
+    }
+    
+    .image {
+      max-width: 200px;
+      width: 90%;
+      margin-top: 50;
+      border: 5px solid #fff;
+      border-radius: 10px;
+    }
+    
+    .text {
+      font-size: 48px;
+      margin-top: 30px;
+      color: #fff;
+      opacity: 0;
+      animation: fade-in 1s ease-in-out forwards;
+    }
+    
+    .subtitle {
+      font-size: 24px;
+      color: #999;
+      margin-top: 20px;
+    }
+    
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .button {
+      margin: 10px;
+      padding: 20px 60px;
+      background-color: #444;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 50px;
+      font-size: 24px;
+    }
+    
+    .button:hover {
+      background-color: #666;
+    }
+    
+    .contact-info {
+      font-size: 16px;
+      color: #fff;
+      margin-top: 40px;
+    }
+    
+    a.no-underline {
+      text-decoration: none;
+    }
+    
+    .underline-text {
+      text-decoration: underline;
+    }
+    
+    a:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    /* Media Query for Mobile Devices */
+    @media (max-width: 600px) {
+      .image {
+        max-width: 150px;
+        margin-top: 0;
+      }
+      .text {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .subtitle {
+        font-size: 25px;
+      }
+      .button {
+        padding: 20px 30px;
+        font-size: 16px;
+      }
+      .contact-info {
+        font-size: 15px;
+        margin-top: 10px;
+      }
+      .button-container {
+        margin-top: 0;
+      }
+    }
+
+    /* 마우스 커서 변경 */
+    #sszal:hover {
+      cursor: none;
+    }
+    #gifCursor {
+      display: none;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-30px, -50%);
+    }
+
+
+/*Footer with waves*/
+
+.footer {
+  position: relative;
+  background: #05b3a4;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top:35%;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+.menu__link:hover{
+  color: white;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.imgur.com/ZAts69f.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 6s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 6s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 5s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
   }
-</script>
-<!-- www.blackcats4567.com -->
-<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
-  </body>
-</html>
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
