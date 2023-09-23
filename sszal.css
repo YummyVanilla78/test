@@ -118,17 +118,6 @@ body {
       }
     }
 
-    /* 마우스 커서 변경 */
-    #sszal:hover {
-      cursor: none;
-    }
-    #gifCursor {
-      display: none;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-30px, -50%);
-    }
 
 
 /*Footer with waves*/
